@@ -16,3 +16,24 @@ function computerPlay() {
             return "scissors";
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    let winString = `You win! Your ${playerSelection} beat ${computerSelection}`;
+    let loseString = `You lose! Your ${playerSelection} was beaten by ${computerSelection}`;
+    let tieString = `You tied! You both played ${playerSelection}`;
+
+    if (playerSelection === computerSelection) {
+        return tieString;
+    } else {
+        switch (playerSelection) {
+            case ("rock"):
+                return (computerSelection === "paper") ? loseString : winString;
+
+            case ("paper"):
+                return (computerSelection === "scissors") ? loseString : winString;
+
+            case ("scissors"):
+                return (computerSelection === "rock") ? loseString : winString;
+        }
+    }
+}
