@@ -7,12 +7,12 @@ function computerPlay() {
 
     switch (randomChoiceNumber) {
         case (1):
-            return "Rock";
+            return "rock";
 
         case (2):
-            return "Paper";
+            return "paper";
 
         case (3):
-            return "Scissors";
+            return "scissors";
     }
 }
