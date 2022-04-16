@@ -18,22 +18,25 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let winString = `You win! Your ${playerSelection} beat ${computerSelection}`;
-    let loseString = `You lose! Your ${playerSelection} was beaten by ${computerSelection}`;
-    let tieString = `You tied! You both played ${playerSelection}`;
+    let roundResult = [false, false, computerSelection];
 
     if (playerSelection === computerSelection) {
-        return tieString;
+        roundResult[0] = true;
     } else {
         switch (playerSelection) {
             case ("rock"):
-                return (computerSelection === "paper") ? loseString : winString;
+                roundResult[1] = (computerSelection === "scissors") ? true : false;
+                break;
 
             case ("paper"):
-                return (computerSelection === "scissors") ? loseString : winString;
+                roundResult[1] = (computerSelection === "rock") ? true : false;
+                break;
 
             case ("scissors"):
-                return (computerSelection === "rock") ? loseString : winString;
+                roundResult[1] = (computerSelection === "paper") ? true : false;
+                break;
         }
     }
+
+    return roundResult;
 }
