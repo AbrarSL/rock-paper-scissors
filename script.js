@@ -93,5 +93,3 @@ function game(rounds) {
 
   console.log(`Wins: ${wins}, Losses: ${losses}, Ties: ${ties}`);
 }
-
-game(5);
