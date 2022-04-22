@@ -14,18 +14,18 @@
 </head>
 
 <body>
-  <div class="startpage">
+  <div id="startPage" class="startpage">
     <div class="dialog-title">Start Game</div>
-    <input type="number" class="text-input" placeholder="No. of rounds">
-    <button class="btn">Start!</button>
+    <input id="roundsInput" type="number" class="text-input" placeholder="No. of rounds">
+    <button id="startButton" class="btn">Start!</button>
   </div>
 
-  <div class="resultpage">
+  <div id="resultPage" class="resultpage">
     <div id="resultTitle" class="dialog-title">You Won!</div>
     <div id="resultWins" class="score">Wins: 0</div>
     <div id="resultLosses" class="score">Losses: 0</div>
     <div id="resultTies" class="score">Ties: 0</div>
-    <button class="btn">Play Again!</button>
+    <button id="playAgainButton" class="btn">Play Again!</button>
   </div>
 
   <h1 class="game-title">Rock Paper Scissors</h1>
@@ -38,13 +38,13 @@
       <div id="ties" class="score">Ties: 0</div>
     </div>
 
-    <div class="arena">
+    <div id="gameArena" class="arena">
     </div>
 
-    <div class="controls">
-      <button class="btn">🪨</button>
-      <button class="btn">🧻</button>
-      <button class="btn">✄</button>
+    <div id="controlArea" class="controls">
+      <button id="rockButton" class="btn">🪨</button>
+      <button id="paperButton" class="btn">🧻</button>
+      <button id="scissorButton" class="btn">✄</button>
     </div>
   </div>
 
