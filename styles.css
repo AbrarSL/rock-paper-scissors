@@ -10,7 +10,7 @@
   
   --btn-shadow-color: #000000;
   --btn-shadow-color-active: #ffffff;
-  --btn-bg-color: #ffffe0;
+  --btn-bg-color: #f8f8b1;
   --btn-fg-color: #000000;
 }
 
@@ -18,9 +18,11 @@
   :root {
     --bg-color: #000000;
     --fg-color: #ffffff;
-  
+    
     --bg-view-color: #242424;
     --fg-view-color: #dadada;
+    
+    --btn-bg-color: #cccc99;
   }
 }
 
@@ -38,14 +40,39 @@ body {
   justify-content: space-between;
 }
 
-.modal {
-  position: absolute;
+.startpage, .resultpage {
+  padding: 2rem;
 
-  display: none;
+  border-radius: 2rem;
+
+  background-color: var(--bg-color);
+  color: var(--fg-color);
 }
 
-.visible {
-  display: block;
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(400px, 80%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal .btn {
+  font-size: 1rem;
+}
+
+.modal .dialog-title {
+  font-size: 1.5rem;
+}
+
+.inactive {
+  display: none;
 }
 
 .game-title {
@@ -81,8 +108,23 @@ body {
   gap: 0.5rem;
 }
 
+.text-input {
+  padding: 0.5rem;
+
+  border-radius: 1rem;
+  border: none;
+
+  background-color: var(--bg-view-color);
+
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+
+  appearance: textfield;
+}
+
 footer {
-  padding: 2rem;
+  padding: 1rem;
 
   background-color: var(--bg-color);
   color: var(--fg-color);
