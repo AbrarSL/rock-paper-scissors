@@ -24,7 +24,7 @@ function playerPlay() {
     playerSelection = prompt("Enter Rock, Paper or Scissors").toLowerCase();
 
     if (playerSelection === "rock" || playerSelection === "paper" ||
-    playerSelection === "scissors") {
+      playerSelection === "scissors") {
       break;
     }
   }
@@ -56,40 +56,27 @@ function playRound(playerSelection, computerSelection) {
   return roundResult;
 }
 
-function game(rounds) {
-  let wins = 0;
-  let losses = 0;
-  let ties = 0;
+function startGame() {
+  const roundsInput = document.querySelector('#roundsInput');
+  const startPage = document.querySelector('#startPage');
 
-  for (let i = 0; i < rounds; i++) {
-    let resultString;
+  gameData.gameRounds = +roundsInput.value;
 
-    let playerSelection = playerPlay();
-    let computerSelection = computerPlay();
-
-    let result = playRound(playerSelection, computerSelection);
-
-    if (result[0]) {
-      ties++;
-      resultString = `You Tied! You both played ${playerSelection}`;
-    } else if (result[1]) {
-      wins++;
-      resultString = `You Win! Your ${playerSelection} beat ${computerSelection}`;
-    } else {
-      losses++;
-      resultString = `You Lose! Your ${playerSelection} lost to ${computerSelection}`;
-    }
-
-    console.log(resultString);
-  }
-
-  if (wins > losses) {
-    console.log("You won!");
-  } else if (wins === losses) {
-    console.log("You tied!");
+  if (gameData.gameRounds <= 0) {
+    roundsInput.classList.add('loser');
   } else {
-    console.log("You lost!")
+    roundsInput.classList.remove('loser');
+    startPage.classList.add('inactive');
   }
-
-  console.log(`Wins: ${wins}, Losses: ${losses}, Ties: ${ties}`);
 }
+
+let gameData = {
+  gameRounds: 0,
+  currentRound: 0,
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
+const startButton = document.querySelector('#startButton');
+startButton.addEventListener('click', startGame);
