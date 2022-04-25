@@ -17,21 +17,6 @@ function computerPlay() {
   }
 }
 
-function playerPlay() {
-  let playerSelection;
-
-  while (true) {
-    playerSelection = prompt("Enter Rock, Paper or Scissors").toLowerCase();
-
-    if (playerSelection === "rock" || playerSelection === "paper" ||
-      playerSelection === "scissors") {
-      break;
-    }
-  }
-
-  return playerSelection;
-}
-
 function playRound(playerSelection, computerSelection) {
   let roundResult = [false, false];
 
@@ -59,6 +44,8 @@ function playRound(playerSelection, computerSelection) {
 function startGame() {
   const roundsInput = document.querySelector('#roundsInput');
   const startPage = document.querySelector('#startPage');
+  const gameButtons = document.querySelectorAll('#controlArea .btn');
+  const scoreBoards = document.querySelectorAll('.scoreboard .score');
 
   gameData.gameRounds = +roundsInput.value;
 
@@ -67,6 +54,8 @@ function startGame() {
   } else {
     roundsInput.classList.remove('loser');
     startPage.classList.add('inactive');
+    gameButtons.forEach((button) => button.classList.remove('inactive'));
+    scoreBoards.forEach((scoreBoard) => scoreBoard.classList.remove('inactive'));
   }
 }
 
