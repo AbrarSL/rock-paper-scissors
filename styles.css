@@ -12,6 +12,9 @@
   --btn-shadow-color-active: #ffffff;
   --btn-bg-color: #f8f8b1;
   --btn-fg-color: #000000;
+
+  --win-color: #0099ff;
+  --lose-color: #ff4800;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -143,7 +146,7 @@ body {
 }
 
 .text-input:focus {
-  box-shadow: 0 0 0.5rem var(--btn-bg-color);
+  box-shadow: 0 0 1rem var(--btn-shadow-color);
 
   outline: none;
 }
@@ -185,4 +188,12 @@ footer {
 .controls .btn {
   flex: 1;
   font-size: 3rem;
+}
+
+.winner {
+  box-shadow: 0 0 1rem var(--win-color);
+}
+
+.loser {
+  box-shadow: 0 0 1rem var(--lose-color);
 }
